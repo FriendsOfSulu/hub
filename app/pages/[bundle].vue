@@ -19,32 +19,33 @@ if (!bundle.value) {
 const bundleValue = computed(() => bundle.value!);
 
 const currentCategorySet = computed(() => {
-  const cats = bundle.value?.categories ?? []
-  return new Set(cats.map((c: string) => c.toLowerCase()))
-})
+  const cats = bundle.value?.categories ?? [];
+  return new Set(cats.map((c: string) => c.toLowerCase()));
+});
 
 const similarBundles = computed(() => {
-  const list = allBundles.value ?? []
-  const currentPath = bundle.value?.path
-  const categorySet = currentCategorySet.value
+  const list = allBundles.value ?? [];
+  const currentPath = bundle.value?.path;
+  const categorySet = currentCategorySet.value;
   const scored = list
-    .filter(b => b.path !== currentPath)
+    .filter((b) => b.path !== currentPath)
     .map((b) => {
-      const points
-        = b.categories?.filter((c: string) => categorySet.has(c.toLowerCase())).length ?? 0
-      return { bundle: b, points }
+      const points =
+        b.categories?.filter((c: string) => categorySet.has(c.toLowerCase()))
+          .length ?? 0;
+      return { bundle: b, points };
     })
     .filter(({ points }) => points > 0)
     .sort((a, b) => b.points - a.points)
     .slice(0, 3)
-    .map(({ bundle: b }) => b)
-  return scored
-})
+    .map(({ bundle: b }) => b);
+  return scored;
+});
 
 const getBundlePath = (path: string) => {
-  const slug = path.split('/').pop() || ''
-  return `/${slug}`
-}
+  const slug = path.split("/").pop() || "";
+  return `/${slug}`;
+};
 
 const installCommand = computed(() =>
   bundle.value ? `composer require ${bundle.value.packageName}` : "",
@@ -96,7 +97,7 @@ useSeoMeta({
 
       <UPageBody class="space-y-10">
         <div class="grid gap-6 lg:grid-cols-12">
-          <UCard class="lg:col-span-8">
+          <UCard class="lg:col-span-9">
             <template #header>
               <div class="flex items-center justify-between gap-2">
                 <span
@@ -129,7 +130,10 @@ useSeoMeta({
                 <p class="text-xs font-medium uppercase text-gray-500">
                   Maintainer
                 </p>
-                <p class="flex items-center gap-2">
+                <NuxtLink
+                  :to="bundleValue.githubLink"
+                  class="flex items-center gap-2 hover:underline"
+                >
                   <UAvatar
                     v-if="bundleValue.githubAvatar"
                     :src="bundleValue.githubAvatar"
@@ -138,7 +142,7 @@ useSeoMeta({
                   <span class="text-sm">
                     {{ bundleValue.githubMaintainer }}
                   </span>
-                </p>
+                </NuxtLink>
               </div>
 
               <div class="space-y-1">
@@ -146,7 +150,7 @@ useSeoMeta({
                   Latest release
                 </p>
                 <p class="text-sm font-medium">
-                  {{ bundleValue.latestRelease || "–" }}
+                  {{ bundleValue.latestRelease || "?" }}
                 </p>
               </div>
 
@@ -155,7 +159,7 @@ useSeoMeta({
                   Target Sulu version
                 </p>
                 <p class="text-sm font-medium">
-                  {{ bundleValue.targetSuluVersion || "–" }}
+                  {{ bundleValue.targetSuluVersion || "?" }}
                 </p>
               </div>
 
@@ -213,7 +217,7 @@ useSeoMeta({
             </div>
           </UCard>
 
-          <div class="space-y-4 lg:col-span-4">
+          <div class="space-y-4 lg:col-span-3">
             <UCard v-if="bundleValue.githubLink || installCommand">
               <template #header>
                 <span
@@ -273,14 +277,8 @@ useSeoMeta({
           </div>
         </div>
 
-        <UPageSection
-          v-if="similarBundles.length > 0"
-          title="Similar bundles"
-        >
-          <UPageGrid
-            cols="3"
-            class="gap-4 items-stretch"
-          >
+        <UPageSection v-if="similarBundles.length > 0" title="Similar bundles">
+          <UPageGrid cols="3" class="gap-4 items-stretch">
             <BundleItem
               v-for="b in similarBundles"
               :key="b.path"

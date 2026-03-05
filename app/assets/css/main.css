@@ -2,7 +2,12 @@
 @import "@nuxt/ui";
 
 :root {
-  --ui-container: calc(100vw - 32px);
+  --ui-container: calc(100vw - 16px);
+  --hero-container: 1150px;
+
+  @media screen and (min-width: var(--breakpoint-lg)) {
+    --ui-container: calc(100vw - 32px);
+  }
 }
 
 @theme static {
@@ -11,4 +16,6 @@
   --color-green-500: #52b6ca;
   --color-green-600: #3f6e77;
   --color-green-700: #112a46;
+
+  --ui-primary: var(--color-green-500);
 }

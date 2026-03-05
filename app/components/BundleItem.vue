@@ -1,19 +1,13 @@
 <template>
   <NuxtLink :to="to">
     <UPageCard
-      :title="bundle.title"
+      :title="title"
       :description="bundle.shortDescription"
       spotlight-color="primary"
       class="h-full flex flex-col cursor-pointer hover:bg-elevated transition-colors"
     >
-      <template
-        v-if="bundle.targetSuluVersion"
-        #header
-      >
-        <UBadge
-          size="xs"
-          variant="outline"
-        >
+      <template v-if="bundle.targetSuluVersion" #header>
+        <UBadge size="xs" variant="outline">
           Sulu {{ bundle.targetSuluVersion }}
         </UBadge>
       </template>
@@ -33,19 +27,11 @@
             @{{ bundle.githubMaintainer }}
           </NuxtLink>
           <span class="flex items-center gap-1 text-muted ml-auto">
-            <UIcon
-              name="i-lucide-download"
-              class="size-4"
-            />
-            {{
-              parseInt(bundle.totalDownloads.toString()).toLocaleString()
-            }}
+            <UIcon name="i-lucide-download" class="size-4" />
+            {{ parseInt(bundle.totalDownloads.toString()).toLocaleString() }}
           </span>
           <span class="flex items-center gap-1 text-muted">
-            <UIcon
-              name="i-lucide-star"
-              class="size-4"
-            />
+            <UIcon name="i-lucide-star" class="size-4" />
             {{ bundle.githubStars }}
           </span>
         </div>
@@ -55,10 +41,16 @@
 </template>
 
 <script setup lang="ts">
-import type { BundleCollectionItem } from '@nuxt/content'
+import type { BundleCollectionItem } from "@nuxt/content";
 
-defineProps<{
-  bundle: BundleCollectionItem
-  to: string
-}>()
+const props = defineProps<{
+  bundle: BundleCollectionItem;
+  to: string;
+}>();
+
+const title = computed(() =>
+  props.bundle.title.startsWith("Sulu")
+    ? props.bundle.title.replace("Sulu", "")
+    : props.bundle.title,
+);
 </script>

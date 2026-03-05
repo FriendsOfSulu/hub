@@ -37,7 +37,7 @@ useSeoMeta({
         <UColorModeButton />
 
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/robole-dev/sulu-hub"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
@@ -58,17 +58,6 @@ useSeoMeta({
         <p class="text-sm text-muted">
           Built with Nuxt UI • © {{ new Date().getFullYear() }}
         </p>
-      </template>
-
-      <template #right>
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
       </template>
     </UFooter>
   </UApp>

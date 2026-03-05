@@ -21,23 +21,23 @@
     <UPageSection class="pt-0">
       <UPageCTA
         title="About Sulu Hub"
-        description="This page is a collection of community bundles for Sulu CMS. It is a platform for developers to share and discover bundles for Sulu CMS."
+        description="This place was build for developers. page is a collection of community bundles for Sulu CMS. It is a platform for developers to share and discover bundles for Sulu CMS."
         variant="subtle"
         :links="[
           {
-            label: 'Start building',
-            to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
+            label: 'Contribute a bundle',
+            to: 'https://github.com/robole-dev/sulu-hub',
             target: '_blank',
-            trailingIcon: 'i-lucide-arrow-right',
-            color: 'neutral',
-          },
-          {
-            label: 'View on GitHub',
-            to: 'https://github.com/nuxt-ui-templates/starter',
-            target: '_blank',
-            icon: 'i-simple-icons-github',
+            icon: 'i-lucide-plus',
             color: 'neutral',
             variant: 'outline',
+          },
+          {
+            label: 'More resources on @FriendsOfSulu',
+            to: 'https://github.com/FriendsOfSulu/',
+            target: '_blank',
+            trailingIcon: 'i-simple-icons-github',
+            color: 'neutral',
           },
         ]"
       />

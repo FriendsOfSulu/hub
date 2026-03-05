@@ -7,7 +7,7 @@ export default defineAppConfig({
     pageHero: {
       slots: {
         container:
-          "flex flex-col lg:grid py-12 sm:py-20 lg:py-32 lg:pb-8 gap-16 sm:gap-y-24",
+          "flex flex-col lg:grid py-12 sm:py-20 lg:py-32 lg:pb-8 gap-16 sm:gap-y-24 max-w-(--hero-container)",
       },
     },
     pageCard: {

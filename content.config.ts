@@ -24,7 +24,7 @@ export default defineContentConfig({
         githubMaintainer: z.string(),
         totalDownloads: z.number(),
         latestRelease: z.string(),
-        targetSuluVersion: z.string(),
+        targetSuluVersion: z.string().optional(),
         lastRepositoryUpdate: isoDateTimeString.optional(),
         categories: z.array(z.string()),
       }),
