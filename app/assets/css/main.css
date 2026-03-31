@@ -13,11 +13,16 @@
 @theme static {
   --font-sans: "Public Sans", sans-serif;
 
+  --color-green-100: #DCE5E4;
   --color-green-500: #52b6ca;
   --color-green-600: #3f6e77;
   --color-green-700: #112a46;
 
   --ui-primary: var(--color-green-500);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 button {

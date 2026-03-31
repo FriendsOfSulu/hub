@@ -1,9 +1,11 @@
 <template>
-  <div class="hero-logo-orbit">
-    <div class="hero-orbit hero-orbit--outest"></div>
-    <div class="hero-orbit hero-orbit--outer">
+  <div class="hero-orbit-container">
+    <div class="hero-orbit hero-orbit--outest" />
+    <div class="hero-orbit hero-orbit--outer" />
+    <div class="hero-orbit hero-orbit--inner" />
+    <div class="hero-orbit__icons">
       <div
-        class="hero-orbit__icon hero-orbit__icon--outer-one bg-white dark:bg-green-700 text-green-600 dark:text-slate-400"
+        class="hero-orbit__icon bg-white dark:bg-slate-700 text-green-600 dark:text-slate-300"
         aria-hidden="true"
       >
         <UIcon
@@ -12,18 +14,7 @@
         />
       </div>
       <div
-        class="hero-orbit__icon hero-orbit__icon--outer-two bg-white dark:bg-green-700 text-green-600 dark:text-slate-400"
-        aria-hidden="true"
-      >
-        <UIcon
-          name="i-lucide-plug"
-          class="size-9"
-        />
-      </div>
-    </div>
-    <div class="hero-orbit hero-orbit--inner">
-      <div
-        class="hero-orbit__icon hero-orbit__icon--inner-one bg-white dark:bg-green-700 text-green-600 dark:text-slate-400"
+        class="hero-orbit__icon bg-white dark:bg-slate-700 text-green-600 dark:text-slate-300"
         aria-hidden="true"
       >
         <UIcon
@@ -32,11 +23,20 @@
         />
       </div>
       <div
-        class="hero-orbit__icon hero-orbit__icon--inner-two bg-white dark:bg-green-700 text-green-600 dark:text-slate-400"
+        class="hero-orbit__icon bg-white dark:bg-slate-700 text-green-600 dark:text-slate-300"
         aria-hidden="true"
       >
         <UIcon
           name="i-lucide-calendar-clock"
+          class="size-11"
+        />
+      </div>
+      <div
+        class="hero-orbit__icon bg-white dark:bg-slate-700 text-green-600 dark:text-slate-300"
+        aria-hidden="true"
+      >
+        <UIcon
+          name="i-lucide-plug"
           class="size-12"
         />
       </div>
@@ -46,7 +46,7 @@
 </template>
 
 <style scoped lang="css">
-.hero-logo-orbit {
+.hero-orbit-container {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -59,13 +59,13 @@
   position: relative;
   z-index: 2;
   mask: url("/sulu.svg") 0 0/100% 100%;
-  width: 70%;
+  width: 60%;
   height: 100%;
   background: linear-gradient(
     -45deg,
     var(--color-green-700),
-    var(--color-green-600),
-    var(--color-green-500)
+    var(--color-green-500),
+    var(--color-green-100)
   );
   background-size: 300% 300%;
   animation: gradient 6s ease infinite;
@@ -75,7 +75,7 @@
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  border: 1px solid rgba(148, 163, 184, 1);
+  border: 1px solid rgb(157, 171, 191);
   z-index: 1;
 }
 
@@ -104,24 +104,24 @@
   animation: orbit-float 6s ease-in-out infinite;
 }
 
-.hero-orbit__icon--outer-one {
+.hero-orbit__icon:nth-child(1) {
   top: 14%;
   left: 18%;
 }
-
-.hero-orbit__icon--outer-two {
-  bottom: 18%;
-  right: 6%;
-}
-
-.hero-orbit__icon--inner-one {
-  top: 6%;
+.hero-orbit__icon:nth-child(2) {
+  top: 5%;
   right: 16%;
+  animation-delay: 0.2s;
 }
-
-.hero-orbit__icon--inner-two {
-  bottom: 1%;
+.hero-orbit__icon:nth-child(3) {
+  bottom: 0;
   left: 18%;
+  animation-delay: 0.4s;
+}
+.hero-orbit__icon:nth-child(4) {
+  bottom: 2%;
+  right: 2%;
+  animation-delay: 0.6s;
 }
 
 @keyframes gradient {
