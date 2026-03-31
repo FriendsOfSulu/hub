@@ -9,7 +9,7 @@ githubMaintainer: Tailr
 githubLink: 'https://github.com/tailrdigital/sulu-translations-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/124871176?v=4'
 githubStars: 6
-totalDownloads: 5158
+totalDownloads: 5202
 targetSuluVersion: ^2.5
 lastRepositoryUpdate: '2025-09-19T09:30:48Z'
 categories:

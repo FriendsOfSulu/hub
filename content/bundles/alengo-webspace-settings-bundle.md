@@ -9,7 +9,7 @@ githubMaintainer: alengoDev
 githubLink: 'https://github.com/alengodev/alengoWebspaceSettingsBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/25492962?v=4'
 githubStars: 8
-totalDownloads: 214
+totalDownloads: 231
 targetSuluVersion: ^3.0
 lastRepositoryUpdate: '2026-02-05T04:46:09Z'
 categories:

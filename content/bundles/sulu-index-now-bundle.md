@@ -9,9 +9,9 @@ githubMaintainer: pascallinder
 githubLink: 'https://github.com/pascallinder/SuluIndexNowBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/14151956?v=4'
 githubStars: 0
-totalDownloads: 7
+totalDownloads: 22
 targetSuluVersion: ^2.6
-lastRepositoryUpdate: '2026-02-11T22:57:09Z'
+lastRepositoryUpdate: '2026-03-07T09:17:38Z'
 categories:
   - seo
   - settings

@@ -8,8 +8,8 @@ license: MIT
 githubMaintainer: robole-dev
 githubLink: 'https://github.com/robole-dev/sulu-ai-translator-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/161349704?v=4'
-githubStars: 17
-totalDownloads: 1197
+githubStars: 18
+totalDownloads: 1326
 targetSuluVersion: ^3.0
 lastRepositoryUpdate: '2026-03-03T15:43:42Z'
 categories:

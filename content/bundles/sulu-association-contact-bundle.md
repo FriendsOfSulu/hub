@@ -8,8 +8,8 @@ githubLink: 'https://github.com/manuxi/SuluAssociationContactBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/11303615?v=4'
 githubStars: 3
 totalDownloads: 9
-targetSuluVersion: ^2.5
-lastRepositoryUpdate: '2025-11-10T23:34:48Z'
+targetSuluVersion: ^3.0
+lastRepositoryUpdate: '2026-03-10T23:23:15Z'
 categories:
   - Content
 latestRelease: ''

@@ -7,7 +7,7 @@ githubMaintainer: plozmun
 githubLink: 'https://github.com/plozmun/SuluSchemaOrgBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/879675?v=4'
 githubStars: 2
-totalDownloads: 136
+totalDownloads: 158
 targetSuluVersion: ^2.1
 lastRepositoryUpdate: '2022-07-07T08:25:41Z'
 categories:

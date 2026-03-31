@@ -9,7 +9,7 @@ githubMaintainer: PERSPEQTIVE
 githubLink: 'https://github.com/perspeqtive/sulu-snippet-manager-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/146860012?v=4'
 githubStars: 9
-totalDownloads: 861
+totalDownloads: 1048
 targetSuluVersion: ^2.6
 lastRepositoryUpdate: '2025-09-24T08:30:53Z'
 categories:

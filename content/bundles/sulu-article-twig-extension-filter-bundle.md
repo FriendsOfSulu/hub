@@ -9,7 +9,7 @@ githubMaintainer: steeven-th
 githubLink: 'https://github.com/steeven-th/SuluArticleTwigExtensionFilterBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/82022828?v=4'
 githubStars: 4
-totalDownloads: 70
+totalDownloads: 100
 targetSuluVersion: ^3.0
 lastRepositoryUpdate: '2026-02-23T10:21:38Z'
 categories:
