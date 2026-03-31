@@ -1,86 +1,90 @@
 <script setup lang="ts">
 // const slug = useRoute().params.bundle as string
-const route = useRoute();
+const route = useRoute()
 
 const { data: bundle } = await useAsyncData(route.path, () =>
-  queryCollection("bundle").path(route.path).first(),
-);
+  queryCollection('bundle').path(route.path).first()
+)
 
-const { data: allBundles } = await useAsyncData("bundles-all", () =>
-  queryCollection("bundle").all(),
-);
+const { data: allBundles } = await useAsyncData('bundles-all', () =>
+  queryCollection('bundle').all()
+)
 
 if (!bundle.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: "Bundle not found",
-  });
+    statusMessage: 'Bundle not found'
+  })
 }
 
-const bundleValue = computed(() => bundle.value!);
+const bundleValue = computed(() => bundle.value!)
 
 const currentCategorySet = computed(() => {
-  const cats = bundle.value?.categories ?? [];
-  return new Set(cats.map((c: string) => c.toLowerCase()));
-});
+  const cats = bundle.value?.categories ?? []
+  return new Set(cats.map((c: string) => c.toLowerCase()))
+})
 
 const similarBundles = computed(() => {
-  const list = allBundles.value ?? [];
-  const currentPath = bundle.value?.path;
-  const categorySet = currentCategorySet.value;
+  const list = allBundles.value ?? []
+  const currentPath = bundle.value?.path
+  const categorySet = currentCategorySet.value
   const scored = list
-    .filter((b) => b.path !== currentPath)
+    .filter(b => b.path !== currentPath)
     .map((b) => {
-      const points =
-        b.categories?.filter((c: string) => categorySet.has(c.toLowerCase()))
-          .length ?? 0;
-      return { bundle: b, points };
+      const points
+        = b.categories?.filter((c: string) => categorySet.has(c.toLowerCase()))
+          .length ?? 0
+      return { bundle: b, points }
     })
     .filter(({ points }) => points > 0)
     .sort((a, b) => b.points - a.points)
     .slice(0, 3)
-    .map(({ bundle: b }) => b);
-  return scored;
-});
+    .map(({ bundle: b }) => b)
+  return scored
+})
 
 const installCommand = computed(() =>
-  bundle.value ? `composer require ${bundle.value.packageName}` : "",
-);
+  bundle.value ? `composer require ${bundle.value.packageName}` : ''
+)
 
 const formattedLastRepositoryUpdate = computed(() => {
-  const raw = bundle.value?.lastRepositoryUpdate;
+  const raw = bundle.value?.lastRepositoryUpdate
 
   if (!raw) {
-    return null;
+    return null
   }
 
-  const date = new Date(raw);
+  const date = new Date(raw)
 
   if (Number.isNaN(date.getTime())) {
-    return raw;
+    return raw
   }
 
   return date.toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-});
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  })
+})
+
+const suluVersionBadges = useSuluVersions(
+  computed(() => bundle.value?.targetSuluVersion)
+)
 
 const copyInstallCommand = () => {
   if (!installCommand.value) {
-    return;
+    return
   }
 
-  if (typeof navigator !== "undefined" && navigator.clipboard) {
-    navigator.clipboard.writeText(installCommand.value);
+  if (typeof navigator !== 'undefined' && navigator.clipboard) {
+    navigator.clipboard.writeText(installCommand.value)
   }
-};
+}
 
 useSeoMeta({
-  title: bundle.value?.title,
-  description: bundle.value?.shortDescription,
-});
+  title: `Sulu Hub - Bundles - ${bundle.value?.title}`,
+  description: bundle.value?.shortDescription
+})
 </script>
 
 <template>
@@ -129,7 +133,7 @@ useSeoMeta({
                 </p>
                 <NuxtLink
                   :to="bundleValue.githubLink"
-                  class="flex items-center gap-2 hover:underline"
+                  class="flex items-center gap-2 underline"
                 >
                   <UAvatar
                     v-if="bundleValue.githubAvatar"
@@ -155,7 +159,24 @@ useSeoMeta({
                 <p class="text-xs font-medium uppercase text-gray-500">
                   Target Sulu version
                 </p>
-                <p class="text-sm font-medium">
+                <div
+                  v-if="suluVersionBadges.length > 0"
+                  class="flex flex-wrap gap-2"
+                >
+                  <UBadge
+                    v-for="version in suluVersionBadges"
+                    :key="version"
+                    size="sm"
+                    variant="soft"
+                    class="rounded-full px-2"
+                  >
+                    {{ version }}
+                  </UBadge>
+                </div>
+                <p
+                  v-else
+                  class="text-sm font-medium"
+                >
                   {{ bundleValue.targetSuluVersion || "?" }}
                 </p>
               </div>
@@ -165,7 +186,10 @@ useSeoMeta({
                   GitHub stars
                 </p>
                 <p class="flex items-center gap-1 text-sm font-medium">
-                  <UIcon name="i-lucide-star" class="size-4" />
+                  <UIcon
+                    name="i-lucide-star"
+                    class="size-4"
+                  />
                   <span>
                     {{ bundleValue.githubStars?.toLocaleString?.() ?? "–" }}
                   </span>
@@ -190,7 +214,10 @@ useSeoMeta({
                 </p>
               </div>
 
-              <div v-if="bundleValue.categories?.length > 0" class="space-y-1">
+              <div
+                v-if="bundleValue.categories?.length > 0"
+                class="space-y-1"
+              >
                 <p class="text-xs font-medium uppercase text-gray-500 pb-1">
                   Categories
                 </p>
@@ -248,7 +275,10 @@ useSeoMeta({
                   View on Packagist
                 </UButton>
 
-                <div v-if="installCommand" class="space-y-2">
+                <div
+                  v-if="installCommand"
+                  class="space-y-2"
+                >
                   <p class="text-xs font-medium uppercase text-gray-500">
                     Install via Composer
                   </p>
@@ -274,9 +304,22 @@ useSeoMeta({
           </div>
         </div>
 
-        <UPageSection v-if="similarBundles.length > 0" title="Similar bundles">
-          <UPageGrid cols="3" class="gap-4 items-stretch">
-            <BundleItem v-for="b in similarBundles" :key="b.path" :bundle="b" />
+        <UPageSection
+          v-if="similarBundles.length > 0"
+          title="Similar bundles"
+          :ui="{
+            title: 'lg:text-4xl'
+          }"
+        >
+          <UPageGrid
+            cols="3"
+            class="gap-4 items-stretch"
+          >
+            <BundleItem
+              v-for="b in similarBundles"
+              :key="b.path"
+              :bundle="b"
+            />
           </UPageGrid>
         </UPageSection>
       </UPageBody>

@@ -66,6 +66,16 @@ useSeoMeta({
           FriendsOfSulu © {{ new Date().getFullYear() }}
         </p>
       </template>
+      <template #right>
+        <NuxtLink
+          :to="`${config.public.repositoryUrl}/issues/new`"
+          external
+          target="_blank"
+          class="text-sm text-muted underline"
+        >
+          Contribute a bundle
+        </NuxtLink>
+      </template>
     </UFooter>
   </UApp>
 </template>

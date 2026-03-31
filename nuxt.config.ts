@@ -12,15 +12,15 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  routeRules: {
-    '/': { prerender: true },
-    '/bundles': { redirect: '/' }
-  },
-
   runtimeConfig: {
     public: {
       repositoryUrl: ''
     }
+  },
+
+  routeRules: {
+    '/': { prerender: true },
+    '/bundles': { redirect: '/' }
   },
 
   compatibilityDate: '2025-01-15',

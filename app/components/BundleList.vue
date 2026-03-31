@@ -1,8 +1,19 @@
 <template>
   <UPageSection id="bundles">
     <div class="flex flex-col align-start lg:flex-row gap-8">
-      <UDrawer v-model:open="filterDrawerOpen" direction="left" :handle="false" class="lg:hidden">
-        <UButton icon="i-lucide-search" label="Filter" color="neutral" variant="outline" class="absolute" />
+      <UDrawer
+        v-model:open="filterDrawerOpen"
+        direction="left"
+        :handle="false"
+        class="lg:hidden"
+      >
+        <UButton
+          icon="i-lucide-search"
+          label="Filter"
+          color="neutral"
+          variant="outline"
+          class="absolute"
+        />
 
         <template #content>
           <div class="flex flex-col gap-4 py-6 px-4 overflow-y-auto">

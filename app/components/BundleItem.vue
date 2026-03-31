@@ -16,6 +16,7 @@
             :key="version"
             size="sm"
             variant="soft"
+            class="rounded-full px-2"
           >
             {{ version }}
           </UBadge>
@@ -62,29 +63,13 @@ const props = defineProps<{
   bundle: BundleCollectionItem
 }>()
 
-const to = computed(() => `/${props.bundle.path.split('/').pop() || ''}`)
-
 const title = computed(() =>
   props.bundle.title.startsWith('Sulu')
     ? props.bundle.title.replace('Sulu', '')
     : props.bundle.title
 )
 
-const suluVersionBadges = computed(() => {
-  const target = props.bundle.targetSuluVersion
-
-  if (!target) return []
-
-  const versions: string[] = []
-
-  if (target.includes('2.')) {
-    versions.push('2.x')
-  }
-
-  if (target.includes('3.')) {
-    versions.push('3.x')
-  }
-
-  return versions
-})
+const suluVersionBadges = useSuluVersions(
+  computed(() => props.bundle.targetSuluVersion)
+)
 </script>
