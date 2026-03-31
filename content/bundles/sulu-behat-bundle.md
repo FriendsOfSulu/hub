@@ -11,7 +11,7 @@ githubAvatar: 'https://avatars.githubusercontent.com/u/6616093?v=4'
 githubStars: 2
 totalDownloads: 2089
 targetSuluVersion: ^2.4
-lastRepositoryUpdate: '2026-03-14T14:23:00Z'
+lastRepositoryUpdate: '2026-03-31T10:55:39Z'
 categories:
   - DX
 latestRelease: v1.3.0

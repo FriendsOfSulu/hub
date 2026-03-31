@@ -8,7 +8,7 @@ license: MIT
 githubMaintainer: akawaka
 githubLink: 'https://github.com/akawaka/sulu-multi-ckeditor-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/139394011?v=4'
-githubStars: 13
+githubStars: 12
 totalDownloads: 308
 targetSuluVersion: ^2.5.20 || ^3.0
 lastRepositoryUpdate: '2026-03-23T12:35:08Z'

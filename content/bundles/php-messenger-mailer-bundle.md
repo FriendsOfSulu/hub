@@ -9,7 +9,7 @@ githubMaintainer: fusonic
 githubLink: 'https://github.com/fusonic/php-messenger-mailer-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/809603?v=4'
 githubStars: 6
-totalDownloads: 48577
+totalDownloads: 48646
 targetSuluVersion: ^2.4
 lastRepositoryUpdate: '2025-12-04T08:47:00Z'
 categories:
