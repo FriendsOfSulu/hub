@@ -1,31 +1,27 @@
-# Nuxt Starter Template
+# Sulu Hub
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+Sulu Hub is a small Nuxt application that lists and showcases community bundles for the [Sulu](https://sulu.io) CMS.  
+Bundle metadata is stored as markdown files and automatically enriched (GitHub stars, downloads, Sulu version, etc.) whenever the app starts.
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+---
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+## Goals
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
-  </picture>
-</a>
+- **Discoverability**: Provide a browsable, searchable overview of Sulu bundles in one place.
+- **Up‑to‑date metadata**: Keep stars, downloads and repository activity fresh via an automatic updater.
+- **Simple contribution model**: Make it easy to add new bundles via a single markdown file per bundle.
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+---
 
-## Quick Start
+## Tech Stack
 
-```bash [Terminal]
-npm create nuxt@latest -- -t github:nuxt-ui-templates/starter
-```
+- **Nuxt 4** (`nuxt`) as the application framework.
+- **Nuxt UI** (`@nuxt/ui`) for the component library and styling baseline.
+- **Nuxt Content** (`@nuxt/content`) to source bundle data from markdown files under `content/bundles`.
+- **Tailwind CSS 4** (`tailwindcss`) for additional utility styling.
+- **Custom Nuxt module** `bundles-metadata-updater`  for keeping bundle metadata in sync with GitHub and Packagist.
 
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
+---
 
 ## Setup
 
@@ -35,13 +31,22 @@ Make sure to install the dependencies:
 npm install
 ```
 
-## Development Server
+---
+
+## Development
 
 Start the development server on `http://localhost:3000`:
 
 ```bash
 npm run dev
 ```
+
+This will:
+
+- Launch the Nuxt dev server.
+- Run the `bundles-metadata-updater` module once on startup to refresh bundle metadata if the last update is older than its configured max age (24h by default).
+
+---
 
 ## Production
 
@@ -51,10 +56,50 @@ Build the application for production:
 npm run generate
 ```
 
-Locally preview production build:
+Locally preview the production build:
 
 ```bash
 npm run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+On each cold start of the Nuxt app (build or dev), the `bundles-metadata-updater` module runs once and refreshes bundle markdown frontmatter where needed.
+
+---
+
+## How bundles are stored
+
+- All bundles live under `content/bundles/*.md`.
+- The bundle collection schema is defined in `content.config.ts`.
+- Each file uses frontmatter with fields like `title`, `packageName`, `githubStars`, `totalDownloads`, `targetSuluVersion`, `lastRepositoryUpdate`, and `categories`.
+
+You normally only need to author the static parts; the updater takes care of dynamic metadata (`githubStars`, `totalDownloads`).
+
+---
+
+## Adding a new bundle
+
+There are two ways to add a bundle entry.
+
+### 1. Using the `generate-bundle-md` skill (recommended)
+
+If you are using this repository in an AI‑assisted environment (Cursor with the `generate-bundle-md` skill enabled), you can:
+
+- Provide one or more GitHub repository URLs for Sulu bundles.
+- Let the skill:
+  - Fetch `composer.json` and `README.md` from GitHub.
+  - Create a new markdown file under `content/bundles/` with the correct filename, frontmatter keys and types.
+  - Pre‑fill:
+    - `title` and `packageName`.
+    - `shortDescription` and body text from the README.
+    - `license` and `githubMaintainer`.
+    - `githubLink` and initial `categories`.
+
+### 2. Manually creating a markdown file
+
+If you prefer to do it by hand:
+
+1. **Create a file** under `content/bundles/`, e.g. `sulu-tailwind-theme-bundle.md`.  
+   - Filenames are typically the bundle name in kebab case, ending with `-bundle.md`.
+2. **Add frontmatter** matching the schema in `content.config.ts`
+
+3. **Run the app** (`npm run dev` or `npm run generate`) so that the metadata updater can enrich the new entry.
