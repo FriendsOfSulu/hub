@@ -21,7 +21,7 @@
               class="underline text-primary"
             >Sulu CMS</NuxtLink> ecosystem.
           </p>
-          <span class="text-lg text-toned pt-2 inline-flex items-center flex-wrap justify-start gap-1 pb-4">
+          <span class="text-lg text-toned inline-flex items-center flex-wrap justify-start gap-1 pb-4">
             The hub is maintained by the
             <NuxtLink
               to="https://github.com/FriendsOfSulu"
