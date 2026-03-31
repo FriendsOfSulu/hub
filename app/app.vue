@@ -1,36 +1,39 @@
 <script setup>
-const route = useRoute();
+const route = useRoute()
 
 useHead({
-  meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
-  link: [{ rel: "icon", href: "/favicon.ico" }],
+  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+  link: [{ rel: 'icon', href: '/favicon.ico' }],
   htmlAttrs: {
-    lang: "en",
-  },
-});
+    lang: 'en'
+  }
+})
 
-const title = "SuluHub";
-const description = "A collection of community bundles for Sulu CMS.";
+const title = 'SuluHub'
+const description = 'A collection of community bundles for Sulu CMS.'
 
 useSeoMeta({
   title,
   description,
   ogTitle: title,
-  ogDescription: description,
+  ogDescription: description
   // ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
   // twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
   // twitterCard: 'summary_large_image'
-});
+})
 </script>
 
 <template>
   <UApp>
-    <UHeader>
+    <UHeader :toggle="false">
       <template #left>
-        <NuxtLink v-if="route.path !== '/'" to="/">
+        <NuxtLink
+          v-if="route.path !== '/'"
+          to="/"
+        >
           <strong>Sulu<span class="text-green-500">Hub</span></strong>
         </NuxtLink>
-        <span v-else></span>
+        <span v-else />
       </template>
 
       <template #right>

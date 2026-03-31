@@ -1,18 +1,18 @@
-import { defineContentConfig, defineCollection } from "@nuxt/content";
-import { z } from "zod";
+import { defineContentConfig, defineCollection } from '@nuxt/content'
+import { z } from 'zod'
 
 const isoDateTimeString = z
   .string()
   .regex(
     /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/,
-    "Invalid ISO datetime string",
-  );
+    'Invalid ISO datetime string'
+  )
 
 export default defineContentConfig({
   collections: {
     bundle: defineCollection({
-      type: "page",
-      source: "bundles/**/*.md",
+      type: 'page',
+      source: 'bundles/**/*.md',
       schema: z.object({
         title: z.string(),
         packageName: z.string(),
@@ -26,8 +26,8 @@ export default defineContentConfig({
         latestRelease: z.string(),
         targetSuluVersion: z.string().optional(),
         lastRepositoryUpdate: isoDateTimeString.optional(),
-        categories: z.array(z.string()),
-      }),
-    }),
-  },
-});
+        categories: z.array(z.string())
+      })
+    })
+  }
+})

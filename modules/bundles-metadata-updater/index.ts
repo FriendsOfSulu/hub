@@ -13,11 +13,11 @@ export interface BundlesMetadataUpdaterModuleOptions {
 
 export default defineNuxtModule<BundlesMetadataUpdaterModuleOptions>({
   meta: {
-    name: 'bundles-metadata-updater',
+    name: 'bundles-metadata-updater'
   },
   defaults: {
     maxAgeHours: 24,
-    force: false,
+    force: false
   },
   async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
@@ -25,15 +25,14 @@ export default defineNuxtModule<BundlesMetadataUpdaterModuleOptions>({
 
     const { runBundlesMetadataUpdater } = await import(runtimePath)
 
-    const maxAgeMs =
-      typeof options.maxAgeHours === 'number'
+    const maxAgeMs
+      = typeof options.maxAgeHours === 'number'
         ? options.maxAgeHours * 60 * 60 * 1000
         : 24 * 60 * 60 * 1000
 
-    const logger =
-      nuxt.options.dev || nuxt.options.debug
+    const logger
+      = nuxt.options.dev || nuxt.options.debug
         ? (message: string) => {
-            // eslint-disable-next-line no-console
             console.info(message)
           }
         : () => {}
@@ -42,8 +41,7 @@ export default defineNuxtModule<BundlesMetadataUpdaterModuleOptions>({
       rootDir: nuxt.options.rootDir,
       force: options.force,
       maxAgeMs,
-      logger,
+      logger
     })
-  },
+  }
 })
-

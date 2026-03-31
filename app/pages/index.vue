@@ -8,73 +8,51 @@
           label: `Browse ${bundles.length} bundles`,
           to: '#bundles',
           trailingIcon: 'i-lucide-arrow-down',
-          size: 'xl',
-        },
+          size: 'xl'
+        }
       ]"
     >
-      <template #title> Sulu<span class="text-green-500">Hub</span> </template>
-      <div class="hero-logo"></div>
+      <template #title>
+        Sulu<span class="text-green-500">Hub</span>
+      </template>
+      <HeroOrbit />
     </UPageHero>
 
     <BundleList :bundles="bundles" />
 
-    <UPageSection class="pt-0">
+    <UContainer class="pt-0 pb-10">
       <UPageCTA
         title="About Sulu Hub"
-        description="This place was build for developers. page is a collection of community bundles for Sulu CMS. It is a platform for developers to share and discover bundles for Sulu CMS."
+        description="This page is intended for developers who want to share their contributions with the Sulu CMS ecosystem.
+
+It is a community-driven project and is not affiliated with Sulu GmbH, the company maintaining Sulu CMS.
+
+While we aim to provide a useful collection of community bundles, we cannot guarantee that it is complete. Feedback, suggestions, and contributions from the community are always welcome."
         variant="subtle"
         :links="[
           {
-            label: 'Contribute a bundle',
+            label: 'Suggest a bundle',
             to: 'https://github.com/robole-dev/sulu-hub',
             target: '_blank',
             icon: 'i-lucide-plus',
             color: 'neutral',
-            variant: 'outline',
+            variant: 'outline'
           },
           {
             label: 'More resources on @FriendsOfSulu',
             to: 'https://github.com/FriendsOfSulu/',
             target: '_blank',
             trailingIcon: 'i-simple-icons-github',
-            color: 'neutral',
-          },
+            color: 'neutral'
+          }
         ]"
       />
-    </UPageSection>
+    </UContainer>
   </div>
 </template>
 
 <script setup lang="ts">
 const { data: bundles } = await useAsyncData(() =>
-  queryCollection("bundle").all(),
-);
+  queryCollection('bundle').all()
+)
 </script>
-
-<style lang="css">
-.hero-logo {
-  mask: url("sulu.svg") 0 0/100% 100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    -45deg,
-    var(--color-green-700),
-    var(--color-green-600),
-    var(--color-green-500)
-  );
-  background-size: 300% 300%;
-  animation: gradient 10s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-</style>

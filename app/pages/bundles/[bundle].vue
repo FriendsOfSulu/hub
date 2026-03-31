@@ -1,8 +1,9 @@
 <script setup lang="ts">
-const slug = useRoute().params.bundle as string;
+// const slug = useRoute().params.bundle as string
+const route = useRoute();
 
-const { data: bundle } = await useAsyncData(() =>
-  queryCollection("bundle").path(`/bundles/${slug}`).first(),
+const { data: bundle } = await useAsyncData(route.path, () =>
+  queryCollection("bundle").path(route.path).first(),
 );
 
 const { data: allBundles } = await useAsyncData("bundles-all", () =>
@@ -41,11 +42,6 @@ const similarBundles = computed(() => {
     .map(({ bundle: b }) => b);
   return scored;
 });
-
-const getBundlePath = (path: string) => {
-  const slug = path.split("/").pop() || "";
-  return `/${slug}`;
-};
 
 const installCommand = computed(() =>
   bundle.value ? `composer require ${bundle.value.packageName}` : "",
@@ -91,6 +87,7 @@ useSeoMeta({
   <UContainer class="py-10">
     <UPage>
       <UPageHeader
+        headline="Bundles"
         :title="bundleValue.title"
         :description="bundleValue.shortDescription"
       />
@@ -279,12 +276,7 @@ useSeoMeta({
 
         <UPageSection v-if="similarBundles.length > 0" title="Similar bundles">
           <UPageGrid cols="3" class="gap-4 items-stretch">
-            <BundleItem
-              v-for="b in similarBundles"
-              :key="b.path"
-              :bundle="b"
-              :to="getBundlePath(b.path)"
-            />
+            <BundleItem v-for="b in similarBundles" :key="b.path" :bundle="b" />
           </UPageGrid>
         </UPageSection>
       </UPageBody>
