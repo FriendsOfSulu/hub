@@ -111,17 +111,17 @@
 .hero-orbit__icon:nth-child(2) {
   top: 5%;
   right: 16%;
-  animation-delay: 0.2s;
+  animation-delay: 1.5s;
 }
 .hero-orbit__icon:nth-child(3) {
   bottom: 0;
   left: 18%;
-  animation-delay: 0.4s;
+  animation-delay: 3s;
 }
 .hero-orbit__icon:nth-child(4) {
   bottom: 2%;
   right: 2%;
-  animation-delay: 0.6s;
+  animation-delay: 4.5s;
 }
 
 @keyframes gradient {
