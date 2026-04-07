@@ -5,7 +5,7 @@ shortDescription: >-
   Adds configurable tabs to Sulu snippets so you can organize structured
   extension data without writing custom admin code.
 license: MIT
-githubMaintainer: perspeqtive
+githubMaintainer: PERSPEQTIVE
 githubLink: 'https://github.com/perspeqtive/sulu-snippet-tabs-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/146860012?v=4'
 githubStars: 6

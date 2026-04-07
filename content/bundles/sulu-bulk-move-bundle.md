@@ -5,7 +5,7 @@ shortDescription: >-
   Moves all child pages from one navigation node to another to quickly
   reorganize large sections of your site tree.
 license: proprietary
-githubMaintainer: perspeqtive
+githubMaintainer: PERSPEQTIVE
 githubLink: 'https://github.com/perspeqtive/sulu-bulk-move-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/146860012?v=4'
 githubStars: 4

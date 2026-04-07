@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// const slug = useRoute().params.bundle as string
 const route = useRoute()
 
 const { data: bundle } = await useAsyncData(route.path, () =>
@@ -41,6 +40,21 @@ const similarBundles = computed(() => {
     .slice(0, 3)
     .map(({ bundle: b }) => b)
   return scored
+})
+
+const moreBundlesByAuthor = computed(() => {
+  const list = allBundles.value ?? []
+  const currentPath = bundle.value?.path
+  const currentMaintainer = bundle.value?.githubMaintainer?.trim().toLowerCase()
+
+  if (!currentMaintainer) {
+    return []
+  }
+
+  return list.filter((b) =>
+    b.path !== currentPath
+    && b.githubMaintainer?.trim().toLowerCase() === currentMaintainer
+  )
 })
 
 const installCommand = computed(() =>
@@ -133,6 +147,8 @@ useSeoMeta({
                 </p>
                 <NuxtLink
                   :to="bundleValue.githubLink"
+                  external
+                  target="_blank"
                   class="flex items-center gap-2 underline"
                 >
                   <UAvatar
@@ -305,10 +321,31 @@ useSeoMeta({
         </div>
 
         <UPageSection
+          v-if="moreBundlesByAuthor.length > 0"
+          title="More bundles by this author"
+          :ui="{
+            title: 'lg:text-4xl',
+            container: 'pb-2'
+          }"
+        >
+          <UPageGrid
+            cols="3"
+            class="gap-4 items-stretch"
+          >
+            <BundleItem
+              v-for="b in moreBundlesByAuthor"
+              :key="b.path"
+              :bundle="b"
+            />
+          </UPageGrid>
+        </UPageSection>
+
+        <UPageSection
           v-if="similarBundles.length > 0"
           title="Similar bundles"
           :ui="{
-            title: 'lg:text-4xl'
+            title: 'lg:text-4xl',
+            container: 'pb-0'
           }"
         >
           <UPageGrid
