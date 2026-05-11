@@ -91,7 +91,8 @@
 
 <script setup lang="ts">
 import type { TabsItem } from '@nuxt/ui'
-import type { BundleCollectionItem, NavigationMenuItem } from '@nuxt/content'
+import type { BundleCollectionItem } from '@nuxt/content'
+import { useBundleListState } from '~/composables/useBundleListState'
 
 const props = defineProps<{
   bundles: BundleCollectionItem[] | undefined
@@ -101,7 +102,7 @@ const bundles = computed(() => props.bundles ?? [])
 
 const filterDrawerOpen = ref(false)
 
-const selectedSort = ref('githubStars')
+const { selectedSort, selectedVersion, selectedCategory } = useBundleListState()
 
 const sortItems = ref<TabsItem[]>([
   {
@@ -118,12 +119,10 @@ const sortItems = ref<TabsItem[]>([
   }
 ])
 
-const selectedVersion = ref('All')
-
-const versionItems = computed<NavigationMenuItem[]>(() => [
+const versionItems = computed(() => [
   {
     label: 'Supported Sulu version:',
-    type: 'label'
+    type: 'label' as const
   },
   {
     label: 'All',
@@ -149,20 +148,17 @@ const versionItems = computed<NavigationMenuItem[]>(() => [
   }
 ])
 
-const selectedCategory = ref('All')
-
-const categoryItems = computed<NavigationMenuItem[]>(() => {
+const categoryItems = computed(() => {
   return [
     {
       label: 'Filter by category:',
-      type: 'label'
+      type: 'label' as const
     },
     {
       label: 'All',
       onClick: () => {
         selectedCategory.value = 'All'
       },
-      tooltip: 'All categories',
       ...(selectedCategory.value === 'All' && { active: true })
       // @todo Add <USeparator /> below
     },
