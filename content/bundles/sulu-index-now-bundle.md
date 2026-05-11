@@ -9,7 +9,7 @@ githubMaintainer: pascallinder
 githubLink: 'https://github.com/pascallinder/SuluIndexNowBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/14151956?v=4'
 githubStars: 0
-totalDownloads: 22
+totalDownloads: 50
 targetSuluVersion: ^2.6
 lastRepositoryUpdate: '2026-03-07T09:17:38Z'
 categories:

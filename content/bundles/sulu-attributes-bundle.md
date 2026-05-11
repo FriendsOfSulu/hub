@@ -9,9 +9,9 @@ githubMaintainer: FriendsOfSulu
 githubLink: 'https://github.com/FriendsOfSulu/SuluAttributesBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/141835158?v=4'
 githubStars: 4
-totalDownloads: 2
+totalDownloads: 6
 targetSuluVersion: '>=2.6'
-lastRepositoryUpdate: '2026-03-31T10:13:46Z'
+lastRepositoryUpdate: '2026-04-13T16:47:11Z'
 categories:
   - dx
 latestRelease: ''

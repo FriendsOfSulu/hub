@@ -9,7 +9,7 @@ githubMaintainer: steeven-th
 githubLink: 'https://github.com/steeven-th/SuluTailwindThemeBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/82022828?v=4'
 githubStars: 5
-totalDownloads: 2
+totalDownloads: 12
 targetSuluVersion: ^3.0
 lastRepositoryUpdate: '2026-03-05T15:13:46Z'
 categories:

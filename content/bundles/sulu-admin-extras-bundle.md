@@ -8,7 +8,7 @@ license: MIT
 githubMaintainer: manuxi
 githubLink: 'https://github.com/manuxi/SuluAdminExtrasBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/11303615?v=4'
-githubStars: 0
+githubStars: 2
 totalDownloads: 40
 targetSuluVersion: ^3.0
 lastRepositoryUpdate: '2026-03-11T20:37:57Z'

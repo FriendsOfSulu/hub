@@ -9,9 +9,9 @@ githubMaintainer: elbformat
 githubLink: 'https://github.com/elbformat/sulu-behat-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/6616093?v=4'
 githubStars: 2
-totalDownloads: 2089
+totalDownloads: 2132
 targetSuluVersion: ^2.4
-lastRepositoryUpdate: '2026-03-31T10:55:39Z'
+lastRepositoryUpdate: '2026-05-02T00:02:30Z'
 categories:
   - DX
 latestRelease: v1.3.0

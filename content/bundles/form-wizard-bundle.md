@@ -8,10 +8,10 @@ license: MIT
 githubMaintainer: Predjee
 githubLink: 'https://github.com/Predjee/form-wizard-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/65652446?v=4'
-githubStars: 0
-totalDownloads: 72
+githubStars: 1
+totalDownloads: 74
 targetSuluVersion: ^3.0
-lastRepositoryUpdate: '2026-03-25T09:25:55Z'
+lastRepositoryUpdate: '2026-04-01T09:58:41Z'
 categories:
   - form
   - content

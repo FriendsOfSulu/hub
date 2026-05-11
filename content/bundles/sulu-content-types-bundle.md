@@ -9,7 +9,7 @@ githubMaintainer: manuxi
 githubLink: 'https://github.com/manuxi/SuluContentTypesBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/11303615?v=4'
 githubStars: 0
-totalDownloads: 1
+totalDownloads: 2
 targetSuluVersion: ^2.6
 lastRepositoryUpdate: '2026-02-19T10:42:33Z'
 categories:
