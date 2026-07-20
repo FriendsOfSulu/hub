@@ -9,7 +9,7 @@ githubMaintainer: akawaka
 githubLink: 'https://github.com/akawaka/sulu-multi-ckeditor-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/139394011?v=4'
 githubStars: 13
-totalDownloads: 408
+totalDownloads: 424
 targetSuluVersion: ^2.6.24 || ^3.0.7
 lastRepositoryUpdate: '2026-05-27T09:54:04Z'
 categories:

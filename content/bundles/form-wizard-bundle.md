@@ -9,7 +9,7 @@ githubMaintainer: Predjee
 githubLink: 'https://github.com/Predjee/form-wizard-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/65652446?v=4'
 githubStars: 1
-totalDownloads: 74
+totalDownloads: 75
 targetSuluVersion: ^3.0
 lastRepositoryUpdate: '2026-04-01T09:58:41Z'
 categories:

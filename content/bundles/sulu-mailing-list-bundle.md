@@ -9,9 +9,9 @@ githubMaintainer: pascallinder
 githubLink: 'https://github.com/pascallinder/SuluMailingListBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/14151956?v=4'
 githubStars: 0
-totalDownloads: 65
+totalDownloads: 73
 targetSuluVersion: ^2.6
-lastRepositoryUpdate: '2026-05-27T06:53:30Z'
+lastRepositoryUpdate: '2026-07-16T13:25:39Z'
 categories:
   - form
   - content

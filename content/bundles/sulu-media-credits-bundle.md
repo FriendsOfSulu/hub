@@ -5,11 +5,11 @@ shortDescription: >-
   The bundle automatically collects and displays media credits for images used
   on the current Sulu website page.
 license: MIT
-githubMaintainer: perspeqtive
+githubMaintainer: PERSPEQTIVE
 githubLink: 'https://github.com/perspeqtive/sulu-media-credits-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/146860012?v=4'
 githubStars: 3
-totalDownloads: 25
+totalDownloads: 61
 targetSuluVersion: ~2.6
 lastRepositoryUpdate: '2026-05-05T14:52:17Z'
 categories:
