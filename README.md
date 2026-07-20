@@ -1,6 +1,6 @@
 # Sulu Hub
 
-![launch application](https://img.shields.io/badge/live-https://friendsofsulu.github.io/hub-brightgreen)
+[![launch application](https://img.shields.io/badge/live-https://friendsofsulu.github.io/hub-brightgreen)](https://friendsofsulu.github.io/hub)
 
 Sulu Hub is a small Nuxt application that lists and showcases community bundles for the [Sulu](https://sulu.io) CMS.  
 Bundle metadata is stored as markdown files and automatically enriched (GitHub stars, downloads, Sulu version, etc.) whenever the app starts.
