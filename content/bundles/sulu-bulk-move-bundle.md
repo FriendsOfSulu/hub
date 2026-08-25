@@ -9,7 +9,7 @@ githubMaintainer: PERSPEQTIVE
 githubLink: 'https://github.com/perspeqtive/sulu-bulk-move-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/146860012?v=4'
 githubStars: 5
-totalDownloads: 436
+totalDownloads: 528
 targetSuluVersion: ^2.6
 lastRepositoryUpdate: '2025-07-06T07:59:47Z'
 categories:

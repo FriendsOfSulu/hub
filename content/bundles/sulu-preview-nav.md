@@ -9,7 +9,7 @@ githubMaintainer: lubomirfiala
 githubLink: 'https://github.com/lubomirfiala/sulu-preview-nav'
 githubAvatar: 'https://avatars.githubusercontent.com/u/77013402?v=4'
 githubStars: 2
-totalDownloads: 269
+totalDownloads: 305
 targetSuluVersion: ~3.0
 lastRepositoryUpdate: '2026-05-07T14:27:56Z'
 categories:

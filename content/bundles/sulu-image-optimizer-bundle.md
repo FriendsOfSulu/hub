@@ -9,7 +9,7 @@ githubMaintainer: innomedio
 githubLink: 'https://github.com/innomedio/sulu-image-optimizer-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/83699298?v=4'
 githubStars: 2
-totalDownloads: 7056
+totalDownloads: 7271
 targetSuluVersion: ^3.0
 lastRepositoryUpdate: '2026-06-09T07:16:29Z'
 categories:
