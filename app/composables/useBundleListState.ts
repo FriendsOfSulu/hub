@@ -59,8 +59,8 @@ export function useBundleListState() {
       'bundle-list:selected-category'
     )
     if (
-      storedCategory &&
-      isAllowedValue(storedCategory, selectedCategoryOptions)
+      storedCategory
+      && isAllowedValue(storedCategory, selectedCategoryOptions)
     ) {
       selectedCategory.value = storedCategory
     }

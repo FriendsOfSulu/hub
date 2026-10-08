@@ -21,7 +21,9 @@ export default defineNuxtModule<BundlesMetadataUpdaterModuleOptions>({
   },
   async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
-    const runtimePath = resolver.resolve('./runtime/server/bundlesMetadataUpdater')
+    const runtimePath = resolver.resolve(
+      './runtime/server/bundlesMetadataUpdater.ts'
+    )
 
     const { runBundlesMetadataUpdater } = await import(runtimePath)
 

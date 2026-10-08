@@ -51,7 +51,7 @@ const moreBundlesByAuthor = computed(() => {
     return []
   }
 
-  return list.filter((b) =>
+  return list.filter(b =>
     b.path !== currentPath
     && b.githubMaintainer?.trim().toLowerCase() === currentMaintainer
   )
@@ -299,9 +299,9 @@ useSeoMeta({
                     Install via Composer
                   </p>
                   <div
-                    class="flex items-center gap-2 rounded-md border border-dashed border-gray-200 bg-gray-50 px-3 py-2 font-mono text-xs dark:border-gray-800 dark:bg-gray-900/40"
+                    class="flex items-center gap-2 overflow-hidden rounded-md border border-dashed border-gray-200 bg-gray-50 px-3 py-2 font-mono text-xs dark:border-gray-800 dark:bg-gray-900/40"
                   >
-                    <span class="truncate">
+                    <span class="truncate text-ellipsis">
                       {{ installCommand }}
                     </span>
                     <UButton
