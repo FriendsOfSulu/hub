@@ -9,7 +9,7 @@ githubMaintainer: manuxi
 githubLink: 'https://github.com/manuxi/SuluNewsBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/11303615?v=4'
 githubStars: 4
-totalDownloads: 651
+totalDownloads: 652
 targetSuluVersion: ^2.6
 lastRepositoryUpdate: '2026-07-09T22:29:25Z'
 categories:

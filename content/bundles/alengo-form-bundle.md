@@ -9,9 +9,9 @@ githubMaintainer: alengoDev
 githubLink: 'https://github.com/alengodev/alengoFormBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/25492962?v=4'
 githubStars: 2
-totalDownloads: 1947
+totalDownloads: 1954
 targetSuluVersion: ^3.0
-lastRepositoryUpdate: '2026-06-10T10:03:29Z'
+lastRepositoryUpdate: '2026-08-27T13:09:33Z'
 categories:
   - Form
   - Content

@@ -7,7 +7,7 @@ githubMaintainer: robole-dev
 githubLink: 'https://github.com/robole-dev/sulu-form-captcha-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/161349704?v=4'
 githubStars: 8
-totalDownloads: 426
+totalDownloads: 488
 targetSuluVersion: ^2.5 || ^3.0
 lastRepositoryUpdate: '2026-08-05T14:14:38Z'
 categories:

@@ -8,10 +8,10 @@ license: MIT
 githubMaintainer: pascallinder
 githubLink: 'https://github.com/pascallinder/SuluMailingListBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/14151956?v=4'
-githubStars: 0
-totalDownloads: 109
+githubStars: 1
+totalDownloads: 164
 targetSuluVersion: ^3.0.8
-lastRepositoryUpdate: '2026-08-12T16:15:48Z'
+lastRepositoryUpdate: '2026-09-28T12:52:55Z'
 categories:
   - form
   - content

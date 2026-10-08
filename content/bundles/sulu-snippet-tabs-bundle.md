@@ -9,7 +9,7 @@ githubMaintainer: PERSPEQTIVE
 githubLink: 'https://github.com/perspeqtive/sulu-snippet-tabs-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/146860012?v=4'
 githubStars: 6
-totalDownloads: 800
+totalDownloads: 996
 targetSuluVersion: ^2.6
 lastRepositoryUpdate: '2025-12-21T10:03:57Z'
 categories:

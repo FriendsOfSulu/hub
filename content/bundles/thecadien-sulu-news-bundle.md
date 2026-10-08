@@ -7,7 +7,7 @@ githubMaintainer: TheCadien
 githubLink: 'https://github.com/TheCadien/SuluNewsBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/9395097?v=4'
 githubStars: 15
-totalDownloads: 3149
+totalDownloads: 3152
 targetSuluVersion: 2.5.*
 lastRepositoryUpdate: '2025-11-28T14:09:34Z'
 categories:

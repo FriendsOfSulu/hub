@@ -9,9 +9,9 @@ githubMaintainer: PERSPEQTIVE
 githubLink: 'https://github.com/perspeqtive/sulu-media-credits-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/146860012?v=4'
 githubStars: 3
-totalDownloads: 94
-targetSuluVersion: ~2.6
-lastRepositoryUpdate: '2026-05-05T14:52:17Z'
+totalDownloads: 190
+targetSuluVersion: ^3.0
+lastRepositoryUpdate: '2026-09-15T09:13:19Z'
 categories:
   - media
   - content

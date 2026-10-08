@@ -9,9 +9,9 @@ githubMaintainer: manuxi
 githubLink: 'https://github.com/manuxi/SuluEventBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/11303615?v=4'
 githubStars: 13
-totalDownloads: 910
+totalDownloads: 949
 targetSuluVersion: ^3.0
-lastRepositoryUpdate: '2026-07-28T21:19:22Z'
+lastRepositoryUpdate: '2026-10-07T21:34:14Z'
 categories:
   - Events
   - Content
