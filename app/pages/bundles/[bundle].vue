@@ -51,10 +51,12 @@ const moreBundlesByAuthor = computed(() => {
     return []
   }
 
-  return list.filter(b =>
-    b.path !== currentPath
-    && b.githubMaintainer?.trim().toLowerCase() === currentMaintainer
-  )
+  return list
+    .filter(b =>
+      b.path !== currentPath
+      && b.githubMaintainer?.trim().toLowerCase() === currentMaintainer
+    )
+    .sort((a, b) => (b.githubStars ?? 0) - (a.githubStars ?? 0))
 })
 
 const installCommand = computed(() =>
