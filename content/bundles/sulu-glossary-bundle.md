@@ -1,0 +1,16 @@
+---
+title: SuluGlossaryBundle
+packageName: manuxi/sulu-glossary-bundle
+shortDescription: Manages abbreviations, acronyms and terms with detail pages, multilingual publishing, versioning and SEO in Sulu.
+license: MIT
+githubMaintainer: manuxi
+githubLink: "https://github.com/manuxi/SuluGlossaryBundle"
+githubAvatar: ""
+githubStars: 0
+totalDownloads: 0
+latestRelease: ""
+targetSuluVersion: "^3.0"
+lastRepositoryUpdate: "1970-01-01T00:00:00.000Z"
+categories: [content]
+---
+Provides a glossary for abbreviations, acronyms and terms with dedicated detail pages, multilingual draft and live content, version restoration, SEO and excerpt data. Entries integrate with selection fields, smart content, search and scheduled publishing. As the Sulu 3 successor to SuluAbbreviationsBundle, it includes a command to migrate data from that bundle's 2.0 release.
