@@ -7,9 +7,9 @@ githubMaintainer: manuxi
 githubLink: 'https://github.com/manuxi/SuluAbbreviationsBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/11303615?v=4'
 githubStars: 0
-totalDownloads: 59
-targetSuluVersion: ^2.5
-lastRepositoryUpdate: '2025-11-04T17:32:56Z'
+totalDownloads: 60
+targetSuluVersion: ^2.6
+lastRepositoryUpdate: '2026-10-12T14:34:17Z'
 categories:
   - Content
 latestRelease: 1.5.2

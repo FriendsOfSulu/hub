@@ -7,9 +7,9 @@ githubMaintainer: FriendsOfSulu
 githubLink: 'https://github.com/FriendsOfSulu/SuluImportExportBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/141835158?v=4'
 githubStars: 14
-totalDownloads: 1030
-targetSuluVersion: ^2.0.1
-lastRepositoryUpdate: '2025-06-25T21:39:12Z'
+totalDownloads: 1568
+targetSuluVersion: ^2.6 || ^3.0
+lastRepositoryUpdate: '2026-10-23T11:14:06Z'
 categories:
   - Content
   - DX

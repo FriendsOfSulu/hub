@@ -9,9 +9,9 @@ githubMaintainer: alengoDev
 githubLink: 'https://github.com/alengodev/alengoCacheWarmupBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/25492962?v=4'
 githubStars: 0
-totalDownloads: 146
+totalDownloads: 159
 targetSuluVersion: ^2.6 || ^3.0
-lastRepositoryUpdate: '2026-08-27T13:14:03Z'
+lastRepositoryUpdate: '2026-10-13T20:13:20Z'
 categories:
   - SEO
   - DX

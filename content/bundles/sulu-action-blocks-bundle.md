@@ -9,7 +9,7 @@ githubMaintainer: PERSPEQTIVE
 githubLink: 'https://github.com/perspeqtive/sulu-action-blocks-bundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/146860012?v=4'
 githubStars: 5
-totalDownloads: 168
+totalDownloads: 269
 targetSuluVersion: ^3.0
 lastRepositoryUpdate: '2026-09-07T12:31:16Z'
 categories:

@@ -8,10 +8,10 @@ license: MIT
 githubMaintainer: manuxi
 githubLink: 'https://github.com/manuxi/SuluEventBundle'
 githubAvatar: 'https://avatars.githubusercontent.com/u/11303615?v=4'
-githubStars: 13
-totalDownloads: 949
+githubStars: 14
+totalDownloads: 1027
 targetSuluVersion: ^3.0
-lastRepositoryUpdate: '2026-10-07T21:34:14Z'
+lastRepositoryUpdate: '2026-11-14T13:16:23Z'
 categories:
   - Events
   - Content
