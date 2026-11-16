@@ -308,7 +308,7 @@ useSeoMeta({
                       color="neutral"
                       variant="ghost"
                       size="xs"
-                      icon="i-heroicons-clipboard-document"
+                      icon="i-lucide-clipboard"
                       @click="copyInstallCommand"
                     >
                       Copy

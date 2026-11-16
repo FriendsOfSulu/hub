@@ -1,36 +1,36 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/eslint", "@nuxt/ui", "@nuxt/content", "@nuxtjs/sitemap"],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/content', '@nuxtjs/sitemap'],
 
   devtools: {
-    enabled: true,
+    enabled: true
   },
 
-  sitemap: {
-    zeroRuntime: true,
-  },
-
-  css: ["~/assets/css/main.css"],
+  css: ['~/assets/css/main.css'],
 
   runtimeConfig: {
     public: {
-      repositoryUrl: "",
-    },
+      repositoryUrl: ''
+    }
   },
 
   routeRules: {
-    "/": { prerender: true },
-    "/bundles": { redirect: "/" },
+    '/': { prerender: true },
+    '/bundles': { redirect: '/' }
   },
 
-  compatibilityDate: "2025-01-15",
+  compatibilityDate: '2025-01-15',
 
   eslint: {
     config: {
       stylistic: {
-        commaDangle: "never",
-        braceStyle: "1tbs",
-      },
-    },
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
   },
-});
+
+  sitemap: {
+    zeroRuntime: true
+  }
+})

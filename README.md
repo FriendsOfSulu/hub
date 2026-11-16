@@ -17,17 +17,23 @@ Bundle metadata is stored as markdown files and automatically enriched (GitHub s
 - **Nuxt UI** (`@nuxt/ui`) for the component library and styling baseline.
 - **Nuxt Content** (`@nuxt/content`) to source bundle data from markdown files under `content/bundles`.
 - **Tailwind CSS 4** (`tailwindcss`) for additional utility styling.
-- **Custom Nuxt module** `bundles-metadata-updater`  for keeping bundle metadata in sync with GitHub and Packagist.
+- **Custom Nuxt module** `bundles-metadata-updater` for keeping bundle metadata in sync with GitHub and Packagist.
 
 ## Setup
+
+Use Node.js 22.22.3 or newer in the Node 22 release line. Node.js 24.15.0+ and 26+ are also supported.
+
+The SQLite dependency can invoke `node-gyp` during installation, so Python 3 and `make` must be available
 
 Install the dependencies:
 
 ```bash
-npm install
+npm ci
 ```
 
-Copy `.env.example` to `.env`. 
+Note: TypeScript is kept on 6.0.x because the Vue type checker and ESLint parser do not yet support TypeScript 7.
+
+Copy `.env.example` to `.env`.
 
 ## Development
 
@@ -92,7 +98,7 @@ If you are using this repository in an AI‑assisted environment (Cursor with th
 
 If you prefer to do it by hand:
 
-1. **Create a file** under `content/bundles/`, e.g. `sulu-tailwind-theme-bundle.md`.  
+1. **Create a file** under `content/bundles/`, e.g. `sulu-tailwind-theme-bundle.md`.
    - Filenames are typically the bundle name in kebab case, ending with `-bundle.md`.
 2. **Add frontmatter** matching the schema in `content.config.ts`
 

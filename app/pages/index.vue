@@ -5,7 +5,7 @@
       orientation="horizontal"
       :links="[
         {
-          label: `Browse ${bundles.length} bundles`,
+          label: `Browse ${bundles?.length ?? 0} bundles`,
           to: '#bundles',
           trailingIcon: 'i-lucide-arrow-down',
           size: 'xl'

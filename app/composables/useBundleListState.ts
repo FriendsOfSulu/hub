@@ -44,7 +44,7 @@ export function useBundleListState() {
     () => 'All'
   )
 
-  if (import.meta.client) {
+  onMounted(() => {
     const storedSort = sessionStorage.getItem('bundle-list:selected-sort')
     if (storedSort && isAllowedValue(storedSort, selectedSortOptions)) {
       selectedSort.value = storedSort
@@ -76,7 +76,7 @@ export function useBundleListState() {
     watch(selectedCategory, (value) => {
       sessionStorage.setItem('bundle-list:selected-category', value)
     })
-  }
+  })
 
   return {
     selectedSort,

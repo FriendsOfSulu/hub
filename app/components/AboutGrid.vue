@@ -73,7 +73,7 @@
         <template #footer>
           <div class="flex flex-col gap-2 items-start">
             <UButton
-              :to="`${config.public.repositoryUrl}/issues/new`"
+              :to="`${repositoryUrl}/issues/new`"
               external
               target="_blank"
               icon="i-lucide-plus"
@@ -167,5 +167,5 @@
 </template>
 
 <script setup lang="ts">
-const config = useRuntimeConfig()
+const repositoryUrl = useRuntimeConfig().public.repositoryUrl
 </script>

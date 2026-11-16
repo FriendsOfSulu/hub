@@ -1,5 +1,4 @@
-import { defineContentConfig, defineCollection } from '@nuxt/content'
-import { z } from 'zod'
+import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 const isoDateTimeString = z
   .string()
